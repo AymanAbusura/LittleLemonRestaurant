@@ -1,11 +1,20 @@
-import logo from './logo.svg';
+// import logo from './assets/logo.svg';
+import React from 'react';
 import './App.css';
+import Header from './Header.js';
+import Nav from './Nav.js';
+import Main from './Main.js';
+import Footer from './Footer.js';
+// import { Fragment } from 'react';
 
 function App() {
   return (
-    <div className="App">
-      <p>Homepage</p>
-    </div>
+    <React.Fragment>
+      <Header/>
+      <Nav/>
+      <Main/>
+      <Footer/>
+      </React.Fragment>
   );
 }
 
