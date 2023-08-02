@@ -1,4 +1,4 @@
-body {
+/* body {
   margin: 0;
   font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', 'Roboto', 'Oxygen',
     'Ubuntu', 'Cantarell', 'Fira Sans', 'Droid Sans', 'Helvetica Neue',
@@ -10,4 +10,97 @@ body {
 code {
   font-family: source-code-pro, Menlo, Monaco, Consolas, 'Courier New',
     monospace;
+} */
+
+/* .container {
+  display: grid;
+  grid-template-columns: repeat(3, 100px);
+  grid-auto-rows: minmax(150px, auto);
+  } */
+/* *{
+  margin: 100;
+  padding: 100;
+} */
+
+/*Global css*/
+body {
+  display: grid;
+}
+
+/* .h1, h2, h3, h4, h5, h6{
+
+} */
+p{
+  font-weight: regular;
+  font-size: 16pt;
+  /* line-height: 1.5; */
+}
+span {
+  font-weight: regular;
+  font-size: 16pt;
+  /* line-height: 1.5; */
+}
+.Header {
+  margin: 10px;
+}
+
+/*Navbar*/
+.position {
+  margin: 20px;
+}
+.nav {
+  display: flex;
+  justify-content: center;
+  margin: 5px;
+  padding: 5px;
+}
+.nav ul {
+  list-style: none;
+}
+.nav>li{
+  text-align: center;
+  margin: 15px;
+  padding: 5px;
+}
+a {
+  text-decoration: none;
+  color: black;
+  font-weight: Medium;
+  font-size: 20px;
+}
+
+/*css for links*/
+/* a {
+  text-align: left;
+
+}
+a:link{
+  color: blue;
+}
+
+a:visited{
+  color: purple;
+}
+
+a:hover{
+  color: green;
+}
+
+a:active{
+  color: white;
+} */
+
+/*Footer css*/
+.footer {
+  display: flex;
+  width: 100%;
+  background-color: #495E57;
+}
+.logo2 {
+  width: 162px;
+  height: 279px;
+}
+.block{
+  margin: -15px; 
+  padding: 100px
 }

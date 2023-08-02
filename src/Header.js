@@ -1,11 +1,12 @@
-import logo from './assets/Logo.svg';
-import React from 'react';
+// import logo from './assets/Logo.svg';
+// import React from 'react';
 
 function Header () {
   return (
-    <div>
-        <img src={logo} alt="logo" />
-    </div>
+    null
+    // <div>
+    //   <img src={logo} alt="logo" className='logo'/>
+    // </div>
      );
 };
 
