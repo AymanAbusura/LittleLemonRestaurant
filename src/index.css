@@ -22,34 +22,50 @@ code {
   padding: 100;
 } */
 
-/*Global css*/
+/*Global CSS*/
 body {
-  display: grid;
+  display: flex;
 }
 
-/* .h1, h2, h3, h4, h5, h6{
+.h1 {
+  color: #F4CE14;
+  font-size: 50px;
+}
+h1 > p{
+  color: White;
+}
+.paragraph1 {
+  color: white;
+  line-height: 140%;
+}
 
-} */
+h2 {
+  width: 50%;
+}
+h4 {
+  color: black;
+  font-size: 50px;
+}
 p{
-  font-weight: regular;
+  font-Style: Regular;
   font-size: 16pt;
-  /* line-height: 1.5; */
+  margin-left: 10px;
 }
 span {
-  font-weight: regular;
+  font-Style: Regular;
   font-size: 16pt;
-  /* line-height: 1.5; */
 }
 .Header {
   margin: 10px;
 }
 
-/*Navbar*/
+/*Navbar CSS*/
 .position {
   margin: 20px;
 }
 .nav {
   display: flex;
+  flex-wrap: wrap;
   justify-content: center;
   margin: 5px;
   padding: 5px;
@@ -69,7 +85,7 @@ a {
   font-size: 20px;
 }
 
-/*css for links*/
+/*CSS for links*/
 /* a {
   text-align: left;
 
@@ -90,11 +106,142 @@ a:active{
   color: white;
 } */
 
-/*Footer css*/
+
+
+/*Main CSS*/
+.Main {
+  display: flex;
+  width: 100%;
+  background-color: #495E57;
+}
+.div1Main{
+  margin: 50px;
+  width: 40%;
+}
+.restaurantfood {
+  width: 300px;
+  height: 300px;
+  border-radius: 4rem;
+  margin: 50px;
+  padding: 50px;
+}
+.button1 {
+  width: 200px;
+  height: 60px;
+  background-color: #F4CE14;
+  border: none;
+  border-radius: 10px;
+  font-size: 20px;
+}
+.button2 {
+  width: 200px;
+  height: 60px;
+  background-color: #F4CE14;
+  border: none;
+  border-radius: 10px;
+  font-size: 20px;
+}
+
+/*Card section*/
+.cardheader{
+  display: flex;
+  flex-direction: row;
+  margin: 10px;
+  padding: 10px;
+  gap: 30rem;
+}
+/*Checking CSS for bordering image and detials*/
+/* .cardgroup{
+  border-color: black;
+  border-style: solid;
+} */
+.cardimages {
+  width: 264px;
+  height: 185px;
+  margin: 10px;
+  padding: 1px;
+  border-top-left-radius: 2rem;
+  border-top-right-radius: 2rem;
+  object-fit: fill;
+}
+.card {
+  display: flex;
+  gap: 10px;
+  margin: 10px;
+  padding: 10px;
+  justify-content: center;
+}
+
+.cardblocks {
+  margin: 10px;
+  padding: 1px;
+  width: 264.67px;
+  height: 439px;
+  background-color: grey;
+}
+.price{
+  color: #EE9972;
+}
+
+/*Testimonials*/
+.testimonials{
+  background-color: #495E57;
+}
+.h1testimonials{
+  /* align-content: center; */
+  margin: 10px;
+  padding: 10px;
+  text-align: center;
+}
+.group{
+  display: flex;
+}
+
+.testimonialsimg {
+  width: 47px;
+  height: 46;
+}
+
+.testimonialsblock{
+  flex-direction: row;
+  background-color: white;
+  /* width: 200px; */
+  /* height: 175px; */
+  margin: 50px;
+  padding: 50px;
+}
+
+/*About CSS*/
+.about{
+  background-color: white;
+}
+
+.paragraph2{
+  color: black;
+}
+.divchefs{
+  position: relative;
+  margin-left: 40rem;
+}
+.chefsimage1 {
+  width: 276px;
+  height: 338px;
+  margin-top: -15rem;
+  margin-bottom: -60px;
+}
+.chefsimage2 {
+  width: 276px;
+  height: 338px;
+  margin-top: -50rem;
+  margin-left: 150px;
+}
+
+/*Footer CSS*/
 .footer {
   display: flex;
   width: 100%;
   background-color: #495E57;
+  justify-content: center;
 }
 .logo2 {
   width: 162px;

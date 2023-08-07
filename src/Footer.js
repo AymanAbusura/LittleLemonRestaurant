@@ -4,7 +4,7 @@ import React from 'react';
 
 function Footer() {
     return (
-        <div className='footer'>
+        <section className='footer'>
             <img src={logo2} alt="logo2" className='logo2'/>
             <div className='block'>
                 <span>Doormat Navigation</span>
@@ -29,7 +29,7 @@ function Footer() {
                 <br></br>
                 <p><a href="/Twitter">Twitter</a></p>
             </div>
-        </div>
+        </section>
     );
   }
 
