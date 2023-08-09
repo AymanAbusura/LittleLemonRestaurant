@@ -1,9 +1,9 @@
 import React from "react";
 
-const About = () => {
+const OrderOnline = () => {
     return (
         <div>
-            About
+            Order Online
         </div>
     )
 }
@@ -13,4 +13,4 @@ const About = () => {
 //         null
 //     );
 // }
-export default About;
+export default OrderOnline;

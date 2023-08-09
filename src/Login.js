@@ -1,6 +1,16 @@
-function Login() {
+import React from "react";
+
+const Login = () => {
     return (
-        null
-    );
+        <div>
+            Login
+        </div>
+    )
 }
+
+// Const function Login() {
+//     return (
+//         null
+//     );
+// }
 export default Login;
