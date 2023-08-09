@@ -5,13 +5,16 @@ import Main from './Main';
 import Footer from './Footer';
 import './index.css';
 
+// import { Routes, Route } from 'react-router-dom';
+// import HomePage from './HomePage';
+// import Reservation from './Reservation'
 function App() {
   return (
-    <React.Fragment>
+    <>
       <Header/>
       <Main/>
       <Footer/>
-    </React.Fragment>
+    </>
   );
 }
 

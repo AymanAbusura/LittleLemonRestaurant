@@ -22,11 +22,8 @@ function Footer() {
             </div>
             <div className='block'>
                 <span>Social Media Links</span>
-                <br></br>
                 <p><a href="/Facebook">Facebook</a></p>
-                <br></br>
                 <p><a href="/Instagram">Instagram</a></p>
-                <br></br>
                 <p><a href="/Twitter">Twitter</a></p>
             </div>
         </section>

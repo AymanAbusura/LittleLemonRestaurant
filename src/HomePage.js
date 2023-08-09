@@ -11,6 +11,7 @@ import chefs1 from './assets/Mario_and_Adrian_B.png';
 import chefs2 from './assets/Mario_and_Adrian_A.png';
 import React from 'react';
 
+
 function HomePage() {
     return (
       <section>
@@ -33,30 +34,42 @@ function HomePage() {
           <div className='card'>
             <div>
               <img src={greekSalad} alt="greekSalad" className='cardimages'/>
-              <table className='cardblocks'>
-                <td><h3>Greek Salad</h3></td>
-                <p className='price'>$12.99</p>
-                <tr><p>The famous greek salad of crispy lettuce, peppers, olives and our Chicago style feta cheese, garnished with crunchy garlic and rosemary croutons.</p></tr>
-                <td><span>Order a delivery <img src={deliveryIcon} alt='deliveryIcon'/></span></td>
-              </table>
+              <div className='cardblocks'>
+                <div className='cardblocks1'>
+                  <h3>Greek Salad</h3>
+                  <span className='price'>$12.99</span>
+                </div>
+                <p>The famous greek salad of crispy lettuce, peppers, olives and our Chicago style feta cheese, garnished with crunchy garlic.</p>
+                <div className='cardblocks2'>
+                  <span>Order a delivery <img src={deliveryIcon} alt='deliveryIcon'/></span>
+                </div>
+              </div>
             </div>
             <div>
               <img src={bruchetta} alt="bruchetta" className='cardimages'/>
-              <table className='cardblocks'>
-                <td><h3>Bruchetta</h3></td>
-                <td><p className='price'>$5.99</p></td>
-                <tr><p>Our Bruschetta is made from grilled bread that has been smeared with garlic and seasoned with salt and olive oil.</p></tr>
-                <td><span>Order a delivery <img src={deliveryIcon} alt='deliveryIcon'/></span></td>
-              </table>
+              <div className='cardblocks'>
+                <div className='cardblocks1'>
+                  <h3>Bruchetta</h3>
+                  <span className='price'>$5.99</span>
+                </div>
+                <p>Our Bruschetta is made from grilled bread that has been smeared with garlic and seasoned with salt and olive oil.</p>
+                <div className='cardblocks2'>
+                  <span>Order a delivery <img src={deliveryIcon} alt='deliveryIcon'/></span>
+                </div>
+              </div>
             </div>
             <div>
               <img src={lemonDessert} alt="lemonDessert" className='cardimages'/>
-              <table className='cardblocks'>
-                <td><h3>Lemon Dessert</h3></td>
-                <td><p className='price'>$5.00</p></td>
-                <tr><p>This comes straight from grandma’s recipe book, every last ingredient has been sourced and is as authentic as can be imagined.</p></tr>
-                <td><span>Order a delivery <img src={deliveryIcon} alt='deliveryIcon'/></span></td>
-              </table>
+              <div className='cardblocks'>
+                <div className='cardblocks1'>
+                  <h3>Lemon Dessert</h3>
+                  <span className='price'>$5.00</span>
+                </div>
+                <p>This comes straight from grandma’s recipe book, every last ingredient has been sourced and is as authentic as can be imagined.</p>
+                <div className='cardblocks2'>
+                  <span>Order a delivery <img src={deliveryIcon} alt='deliveryIcon'/></span>
+                </div>
+              </div>
             </div>
           </div>
         </div>
