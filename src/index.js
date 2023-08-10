@@ -2,7 +2,7 @@ import React from 'react';
 import ReactDOM from 'react-dom/client';
 import './index.css';
 import App from './App';
-// import HomePage from './HomePage';
+import Home from './Home';
 import About from './About';
 import Reservation from './Reservation';
 import OrderOnline from './OrderOnline';
@@ -15,6 +15,7 @@ root.render(
   <Router>
     <Routes>
       <Route path='/' element={<App />}></Route>
+      <Route path='/Home' element={<Home />}></Route>
       <Route path='/About' element={<About />}></Route>
       <Route path='/Reservation' element={<Reservation />}></Route>
       <Route path='/OrderOnline' element={<OrderOnline />}></Route>

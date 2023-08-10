@@ -18,13 +18,13 @@ code {
   grid-auto-rows: minmax(150px, auto);
   } */
 /* *{
-  margin: 100;
-  padding: 100;
+  margin: 0;
+  padding: 0;
 } */
 
 /*Global CSS*/
 body {
-  display: flex;
+  display: grid;
 }
 
 .h1 {
@@ -272,8 +272,22 @@ a:active{
 }
 
 /*BookingPage CSS*/
+/* .content{
+  
+} */
 .Maindiv {
   background-color: #495E57;
+}
+.div1Main2{
+  padding: 50px;
+}
+.card2 {
+  display: grid;
+  grid-template-columns: 1fr 1fr 1fr;
+  gap: 10px;
+  margin: 10px;
+  padding: 10px;
+  justify-items: center;
 }
 .cardimages2{
   width: 264px;
@@ -284,8 +298,17 @@ a:active{
   object-fit: fill;
 }
 .buttondiv{
-  margin-left: 45%;
+  position: relative;
+  width: 100px;
+  height: 100px;
+  left: 39rem;
 }
+@media screen and (max-width: 1024px) {
+  .buttondiv {
+    left: 23rem;
+  }
+}
+
 .button3{
   width: 200px;
   height: 60px;
@@ -297,20 +320,40 @@ a:active{
 
 /*BookingForm*/
 .form{
-  display: flex;
-  flex-direction: column;
+  display: grid;
   justify-content: center;
 }
 .info {
-  display: grid;
+  margin-top:30px;
 }
 label {
   font-size: 20px;
+  color: white;
+}
+.label2{
+  margin-top: -23px;
+  margin-left: 300px;
+}
+input, select {
+  color: #495E57;
+  border-radius: 10px;
 }
 .box {
   box-sizing:border-box;
-  width: 200px;
-  height: 30px;
+  width: 250px;
+  height: 50px;
+  border-radius: 10px;
+}
+.labelsdiv1{
+  margin-top: -74px;
+  margin-left: 300px;
+}
+.labelsdiv2{
+  margin-top: 0px;
+  margin-left: 300px;
+}
+.labelsdiv3{
+  margin-top: -72px;
 }
 .h5{
   color: #F4CE14;

@@ -1,15 +1,15 @@
 import React from 'react';
-import BookingPage from './BookingPage';
-import Header from './Header';
+import HomePage from './HomePage';
 import Footer from './Footer';
+import Header from './Header';
 
 function Reservation() {
     return (
-        <div>
+        <>
             <Header />
-             <BookingPage />
-             <Footer />
-        </div> 
+            <HomePage />
+            <Footer />
+        </>
     );
 }
 export default Reservation;

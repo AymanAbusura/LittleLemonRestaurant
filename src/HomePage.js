@@ -10,9 +10,16 @@ import Danil from './assets/Danil.png';
 import chefs1 from './assets/Mario_and_Adrian_B.png';
 import chefs2 from './assets/Mario_and_Adrian_A.png';
 import React from 'react';
-
+import { useNavigate } from "react-router-dom";
 
 function HomePage() {
+  
+  const navigate = useNavigate();
+  const navigateToReservation = () => {
+    navigate('/');
+    navigate('/Reservation');
+  };
+
     return (
       <section>
         <div className='Main'>
@@ -22,7 +29,7 @@ function HomePage() {
               <p>Chicago</p>
             </h1>
             <p className='paragraph1'>We are a family owned Mediterranean restaurant, focused on traditional recipies served with a modren twist.</p>
-          <button className='button1'>Reserve Table</button>
+          <button className='button1' onClick={navigateToReservation}>Reserve Table</button>
           </div>
           <img src={restaurantfood} alt="restaurantfood" className='restaurantfood'/>
         </div>
