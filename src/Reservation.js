@@ -7,8 +7,8 @@ function Reservation() {
     return (
         <div>
             <Header />
-             <BookingPage />
-             <Footer />
+            <BookingPage />
+            <Footer />
         </div> 
     );
 }
