@@ -5,6 +5,7 @@ import App from './App';
 import Home from './Home';
 import About from './About';
 import Reservation from './Reservation';
+import BookingForm2 from './BookingForm2';
 import OrderOnline from './OrderOnline';
 import Login from './Login';
 import reportWebVitals from './reportWebVitals';
@@ -18,6 +19,7 @@ root.render(
       <Route path='/Home' element={<Home />}></Route>
       <Route path='/About' element={<About />}></Route>
       <Route path='/Reservation' element={<Reservation />}></Route>
+      <Route path='/BookingForm2' element={<BookingForm2 />}></Route>
       <Route path='/OrderOnline' element={<OrderOnline />}></Route>
       <Route path='/Login' element={<Login />}></Route>
     </Routes>

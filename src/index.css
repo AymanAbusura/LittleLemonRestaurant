@@ -318,7 +318,7 @@ a:active{
   font-size: 20px;
 }
 
-/*BookingForm*/
+/*BookingForm1*/
 .form{
   display: grid;
   max-width: 200px;
@@ -334,7 +334,6 @@ label {
 }
 input, select {
   color: #495E57;
-  background-color: white;
   border-radius: 10px;
 }
 .box {
@@ -359,4 +358,29 @@ input, select {
   font-size: 50px;
   margin: 0;
   padding: 0;
+}
+/*BookingForm2*/
+.form1{
+  display: grid;
+  background-color: #495E57;
+  gap: 20px;
+  justify-items: center;
+}
+.box1 {
+  box-sizing:border-box;
+  width: 220px;
+  height: 50px;
+  border-radius: 10px;
+}
+.lastnamediv{
+  margin-top: -74px;
+  margin-left: 300px;
+}
+.phonediv{
+  margin-top: -73px;
+  margin-left: 300px;
+}
+.speciallabeldiv{
+  margin-top: -45px;
+  margin-left: 300px;
 }

@@ -4,9 +4,38 @@ import restaurantfood from './assets/restaurantfood.jpg';
 import React from 'react';
 import { useState } from 'react';
 // import React, { useEffect } from 'react';
+import { useNavigate } from "react-router-dom";
 
 
 const BookingForm = () => {
+
+    const navigate = useNavigate();
+    const navigateToBookingForm2 = () => {
+      navigate('/BookingForm2');
+    };
+    
+    // function handleSubmit(e) {
+    //     e.preventDefault(navigateToBookingForm2);
+    //     console.log('You clicked submit.');
+    //   }
+
+    // constructor(props) {
+    //     super(props);
+    //     this.state = {
+    //       isGoing: true,
+    //       numberOfGuests: 2
+    //     };
+    
+    //     this.handleInputChange = this.handleInputChange.bind(this);
+    //     handleInputChange(event) {
+    //         const target = event.target;
+    //         const value = target.type === 'checkbox' ? target.checked : target.value;
+    //         const name = target.name;
+        
+    //         this.setState({
+    //           [name]: value
+    //         })
+    //   }
 
     // const [color, setColor] = useState("blue");
 
@@ -64,27 +93,27 @@ const BookingForm = () => {
                         Reservations
                     </h1> 
                     <form className='form' id="myform">
-                        <label>Indoor seating 
+                        <label htmlFor="indoor">Indoor seating 
                         <input 
                             type="radio" 
-                            name='Indoor'
-                            id='Indoor'
+                            name='indoor'
+                            id='indoor'
                             value="Indoor"
                             checked={seating === "Indoor"}
                             onChange={onOptionChangeSeating}
                         />
                         </label>
-                        <label className='label2'>Outdoor seating 
+                        <label className='label2' htmlFor="outdoor">Outdoor seating 
                             <input 
                                 type="radio" 
-                                name='Outdoor'
-                                id='Outdoor'
+                                name='outdoor'
+                                id='outdoor'
                                 value="Outdoor"
                                 checked={seating === "Outdoor"}
                                 onChange={onOptionChangeSeating}
                             />
                         </label>
-                        <div className='info'>
+                        <div>
                             <div>
                                 <div>
                                     <label htmlFor="res-date">Date</label>
@@ -171,27 +200,26 @@ const BookingForm = () => {
                     </form>
                 </div>
             </div>
-
-        <div>
-        <div className='card2'>
-                <div>
-                    <img src={restaurant} alt="restaurant" className='cardimages2'/>
+            <div>
+                <div className='card2'>
+                    <div>
+                        <img src={restaurant} alt="restaurant" className='cardimages2'/>
+                    </div>
+                    <div>
+                        <img src={chefB} alt="chef" className='cardimages2'/>
+                    </div>
+                    <div>
+                        <img src={restaurantfood} alt="restaurantfood" className='cardimages2'/>
+                    </div>
+                    {/* <div>
+                        <button className='button3' onClick={navigateToBookFrom2}>Reserve a Table</button>
+                    </div> */}
                 </div>
-                <div>
-                    <img src={chefB} alt="chef" className='cardimages2'/>
+                <div className='buttondiv'>
+                    <button type="submit" className='button3' form='myform' onClick={navigateToBookingForm2}>Reserve a Table</button>
+                    {/* <button className='button3' form='myform' onClick={navigateToBookForm2}>Reserve a Table</button> */}
                 </div>
-                <div>
-                    <img src={restaurantfood} alt="restaurantfood" className='cardimages2'/>
-                </div>
-                {/* <div>
-                    <button className='button3' onClick={navigateToBookFrom2}>Reserve a Table</button>
-                </div> */}
             </div>
-            <div className='buttondiv'>
-                <button type="submit" className='button3' form='myform'>Reserve a Table</button>
-                {/* <button className='button3' form='myform' onClick={navigateToBookForm2}>Reserve a Table</button> */}
-            </div>
-        </div>
         </section>
     );
 }
