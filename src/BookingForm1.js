@@ -46,6 +46,32 @@ const BookingForm = () => {
     //     document.getElementsByClassName('box').style.backgroundColor = color;
     // },[color])
 
+    function changeColor1(){
+        var color = '#495E57';
+        var fontcolor = 'white';
+        document.getElementsByTagName('Input')[2].style.background=color;
+        document.getElementsByTagName('Input')[2].style.color=fontcolor;
+    }
+
+    function changeColor2(){
+        var color = '#495E57';
+        var fontcolor = 'white';
+        document.querySelectorAll('Select')[0].style.background=color;
+        document.querySelectorAll('Select')[0].style.color=fontcolor;
+    }
+    function changeColor3(){
+        var color = '#495E57';
+        var fontcolor = 'white';
+        document.querySelectorAll('Select')[1].style.background=color;
+        document.querySelectorAll('Select')[1].style.color=fontcolor;
+    }
+    function changeColor4(){
+        var color = '#495E57';
+        var fontcolor = 'white';
+        document.querySelectorAll('Select')[2].style.background=color;
+        document.querySelectorAll('Select')[2].style.color=fontcolor;
+    }
+
     const [seating, setSeating] = useState("");
     const [date, setDate] = useState("Date");
     const [time, setTime] = useState("Time");
@@ -55,14 +81,21 @@ const BookingForm = () => {
     const onOptionChangeSeating = e => {
         setSeating(e.target.value);
     }
+    const onOptionChangeDate = e => {
+        setDate(e.target.value);
+        changeColor1();
+    }
     const onOptionChangeTime = e => {
         setTime(e.target.value);
+        changeColor2();
     }
     const onOptionChangeGuests = e => {
         setGuests(e.target.value);
+        changeColor3();
     }
     const onOptionChangeOccasion = e => {
         setOccasion(e.target.value);
+        changeColor4();
     }
 
 //   let yellow = '#ffc800';
@@ -125,7 +158,7 @@ const BookingForm = () => {
                                         id="res-date" 
                                         className='box'
                                         value={date} 
-                                        onChange={(e) => setDate(e.target.value)}
+                                        onChange={onOptionChangeDate}
                                 />
                                 </div>
                             </div>
