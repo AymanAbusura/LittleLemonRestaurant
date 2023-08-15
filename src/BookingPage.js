@@ -1,10 +1,10 @@
 import React from 'react';
-import BookingForm1 from './BookingForm1';
+import BookingForm from './BookingForm';
 
 function BookingPage() {
     return (
         <section>
-            <BookingForm1 />
+            <BookingForm />
         </section>
     );
 }

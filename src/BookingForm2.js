@@ -5,14 +5,18 @@ import React from 'react';
 import { useState } from 'react';
 import Nav from './Nav';
 import Footer from './Footer';
+import { useLocation } from 'react-router-dom';
 
-const BookingForm2 = () => {
+function BookingForm2 () {
     // const [agreed, setAgreed] = useState("");
 
+    const location = useLocation();
+    console.log(location.state);
+
     const [fname, setFname] = useState("");
-    const [lname, setLname] = useState("Date");
-    const [email, setEmail] = useState("Time");
-    const [phone, setPhone] = useState("No. of Guests");
+    const [lname, setLname] = useState("");
+    const [email, setEmail] = useState("");
+    const [phone, setPhone] = useState("");
 
     const onChangeFname = e => {
         setFname(e.target.value);
@@ -27,12 +31,24 @@ const BookingForm2 = () => {
         setPhone(e.target.value);
     }
 
+    const handleSubmit = event => {
+        var e = event.preventDefault();
+        console.log(e);
+        alert('Your Reservation has been confirmed check your email')
+      }
+    
+    //   const navigate = useNavigate();
+    // const navigateToBookingForm = () => {
+    //     if(location.state.date === "Date")
+    //         <BookingForm />
+    // };
+
     return (
         <section>
         <Nav />
         <div>
         <form className='form1' id="myform2">
-            <div>
+            <div className='formdiv'>
                 <div>
                     <div>
                         <label htmlFor="fname">* First Name</label>
@@ -60,6 +76,7 @@ const BookingForm2 = () => {
                             name='lname'
                             id='lname'
                             value={lname}
+                            autoComplete="off"
                             className='box1'
                             onChange={onChangeLname}
                             required
@@ -76,6 +93,7 @@ const BookingForm2 = () => {
                             name='email'
                             id='email'
                             value={email}
+                            autoComplete="off"
                             className='box1'
                             onChange={onChangeEmail}
                             required
@@ -92,23 +110,12 @@ const BookingForm2 = () => {
                             name='phone'
                             id='phone'
                             value={phone}
+                            autoComplete="off"
                             className='box1'
                             onChange={onChangePhone} 
                             required
                         />
                     </div>
-                </div>
-                <div>
-                    <div>
-                        <label>Details</label>
-                    </div>
-                    <div>
-                    </div>
-                    <label>
-                        {/* <input type='radio' value={agreed} required/> */}
-                        <input type='radio' required/>
-                        You agree to our friendly <u>privacy policy</u>
-                    </label>
                 </div>
                 <div className='speciallabeldiv'>
                     <div>
@@ -120,6 +127,18 @@ const BookingForm2 = () => {
                             className='box1'
                         />
                     </div>
+                </div>
+                <div className='detaildiv'>
+                    <label>
+                        <span className='detail_span_p' required>{location.state.date}</span>
+                        <span className='detail_span_p detail_span'>{location.state.guests}</span>
+                        <br></br>
+                        <span className='detail_span_p'>{location.state.availableTimes}</span>
+                        <span className='detail_span_p detail_span1'>{location.state.occasion}</span>
+                        <p className='detail_span_p detail_span2'>{location.state.seating}</p>
+                        {/* <input type='radio' value={agreed} required/> */}
+                        <div className='detail_span3'><input type='radio' required/>You agree to our friendly <u>privacy policy</u></div>
+                    </label>
                 </div>
             </div>
         </form>
@@ -140,8 +159,8 @@ const BookingForm2 = () => {
                     </div> */}
                 </div>
                 <div className='buttondiv'>
-                    <button type="submit" className='button3' form='myform1'>Reserve a Table</button>
-                    {/* <button className='button3' form='myform' onClick={navigateToBookForm2}>Reserve a Table</button> */}
+                    {/* <button type="submit" className='button3' form='myform1'>Confirm Reservation</button> */}
+                    <button className='button3' form='myform2' onClick={handleSubmit}>Reserve a Table</button>
                 </div>
             </div>
         <Footer />

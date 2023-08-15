@@ -1,50 +1,49 @@
 import restaurant from './assets/restaurant.jpg';
 import chefB from './assets/restaurant chef B.jpg';
 import restaurantfood from './assets/restaurantfood.jpg';
+import './calender.css';
 import React from 'react';
 import { useState } from 'react';
 // import React, { useEffect } from 'react';
 import { useNavigate } from "react-router-dom";
 
+// let availableTimes = [
+//     {Time: 'Time'},
+//     {Time : '17:00 pm'},
+//     {Time : '18:00 pm'},
+//     {Time : '19:00 pm'},
+//     {Time : '20:00 pm'},
+//     {Time : '21:00 pm'},
+//     {Time : '22:00 pm'}
+// ]
+// var onOptionChangeAvailableTimes = e => {
+//     setavailableTimes(e.target.value);
+//     // changeColor2();
+// }
+
+// const [state, setState] = useState({
+//     Date: "",
+//     Time: "",
+//     NumberOfDiners: "",
+//     Occasion: ""
+//   });
 
 const BookingForm = () => {
 
+        // Time : "",
+        // NumberOfDiners : "",
+        // Occasion : ""
+    // const info1 = info.map((item) => <p>{item}</p>);
     const navigate = useNavigate();
     const navigateToBookingForm2 = () => {
-      navigate('/BookingForm2');
+      navigate('/BookingForm2', {state :{ 
+        date : date, 
+        seating : seating, 
+        availableTimes : availableTimes,
+        guests : guests,
+        occasion : occasion
+    }});
     };
-    
-    // function handleSubmit(e) {
-    //     e.preventDefault(navigateToBookingForm2);
-    //     console.log('You clicked submit.');
-    //   }
-
-    // constructor(props) {
-    //     super(props);
-    //     this.state = {
-    //       isGoing: true,
-    //       numberOfGuests: 2
-    //     };
-    
-    //     this.handleInputChange = this.handleInputChange.bind(this);
-    //     handleInputChange(event) {
-    //         const target = event.target;
-    //         const value = target.type === 'checkbox' ? target.checked : target.value;
-    //         const name = target.name;
-        
-    //         this.setState({
-    //           [name]: value
-    //         })
-    //   }
-
-    // const [color, setColor] = useState("blue");
-
-    // const styleBox = color => {
-    //     setColor(color);
-    // }
-    // useEffect(() => {
-    //     document.getElementsByClassName('box').style.backgroundColor = color;
-    // },[color])
 
     function changeColor1(){
         var color = '#495E57';
@@ -74,9 +73,12 @@ const BookingForm = () => {
 
     const [seating, setSeating] = useState("");
     const [date, setDate] = useState("Date");
-    const [time, setTime] = useState("Time");
+    const [availableTimes, setavailableTimes] = useState("Time");
     const [guests, setGuests] = useState("No. of Guests");
     const [occasion, setOccasion] = useState("Occasion");
+
+    // var availableTimes = [...availableTimes];
+    // [availableTimes, setavailableTimes] = useState(["Time"]);
 
     const onOptionChangeSeating = e => {
         setSeating(e.target.value);
@@ -85,8 +87,8 @@ const BookingForm = () => {
         setDate(e.target.value);
         changeColor1();
     }
-    const onOptionChangeTime = e => {
-        setTime(e.target.value);
+    var onOptionChangeAvailableTimes = e => {
+        setavailableTimes(e.target.value);
         changeColor2();
     }
     const onOptionChangeGuests = e => {
@@ -170,17 +172,17 @@ const BookingForm = () => {
                                     <select 
                                         name='res-time' 
                                         id="res-time" 
-                                        value={time} 
+                                        value={availableTimes} 
                                         className='box'
-                                        onChange={onOptionChangeTime}
+                                        onChange={onOptionChangeAvailableTimes}
                                     >
                                         <option defaultValue disabled hidden>Time</option>
-                                        <option>17:00</option>
-                                        <option>18:00</option>
-                                        <option>19:00</option>
-                                        <option>20:00</option>
-                                        <option>21:00</option>
-                                        <option>22:00</option>
+                                        <option value="17:00">17:00</option>
+                                        <option value="18:00">18:00</option>
+                                        <option value="19:00">19:00</option>
+                                        <option value="20:00">20:00</option>
+                                        <option value="21:00">21:00</option>
+                                        <option value="22:00">22:00</option>
                                     </select>
                                 </div>
                             </div>
@@ -197,16 +199,16 @@ const BookingForm = () => {
                                         onChange={onOptionChangeGuests}
                                     >
                                         <option defaultValue disabled hidden>No. of Guests</option>
-                                        <option>1 Diner</option>
-                                        <option>2 Diner</option>
-                                        <option>3 Diner</option>
-                                        <option>4 Diner</option>
-                                        <option>5 Diner</option>
-                                        <option>6 Diner</option>
-                                        <option>7 Diner</option>
-                                        <option>8 Diner</option>
-                                        <option>9 Diner</option>
-                                        <option>10 Diner</option>
+                                        <option value="1 Diner">1 Diner</option>
+                                        <option value="2 Diner">2 Diner</option>
+                                        <option value="3 Diner">3 Diner</option>
+                                        <option value="4 Diner">4 Diner</option>
+                                        <option value="5 Diner">5 Diner</option>
+                                        <option value="6 Diner">6 Diner</option>
+                                        <option value="7 Diner">7 Diner</option>
+                                        <option value="8 Diner">8 Diner</option>
+                                        <option value="9 Diner">9 Diner</option>
+                                        <option value="10 Diner">10 Diner</option>
                                     </select>
                                 </div>
                             </div>
@@ -223,9 +225,9 @@ const BookingForm = () => {
                                         onChange={onOptionChangeOccasion}
                                     >
                                         <option defaultValue disabled hidden>Occasion</option>
-                                        <option>Birthday</option>
-                                        <option>Engagement</option>
-                                        <option>Anniversary</option>
+                                        <option value="Birthday">Birthday</option>
+                                        <option value="Engagement">Engagement</option>
+                                        <option value="Anniversary">Anniversary</option>
                                     </select>
                                 </div>
                             </div>
