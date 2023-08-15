@@ -7,6 +7,7 @@ import { useState } from 'react';
 // import React, { useEffect } from 'react';
 import { useNavigate } from "react-router-dom";
 
+
 // let availableTimes = [
 //     {Time: 'Time'},
 //     {Time : '17:00 pm'},
@@ -28,6 +29,16 @@ import { useNavigate } from "react-router-dom";
 //     Occasion: ""
 //   });
 
+// constructor(props) {
+//     super(props);
+//     this.state = {
+//       isGoing: true,
+//       numberOfGuests: 2
+//     };
+
+//     this.handleInputChange = this.handleInputChange.bind(this);
+//   }
+
 const BookingForm = () => {
 
         // Time : "",
@@ -37,6 +48,7 @@ const BookingForm = () => {
     const navigate = useNavigate();
     const navigateToBookingForm2 = () => {
       navigate('/BookingForm2', {state :{ 
+        // navigate('/BookingSlot', {state :{
         date : date, 
         seating : seating, 
         availableTimes : availableTimes,
