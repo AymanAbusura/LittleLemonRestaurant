@@ -129,7 +129,7 @@ function BookingSlot () {
                     </div> */}
                 </div>
                 <div className='buttondiv'>
-                    <Button className='button3' type="submit" form='myform2'>Reserve a Table</Button>
+                    <Button className='button3' type="submit" form='myform2'>Confirm Reservation</Button>
                     {/* <button type="submit" className='button3' form='myform1'>Confirm Reservation</button>
                     <button className='button3' form='myform2' onClick={handleSubmit}>Reserve a Table</button>
                     <Button className='button3' type="submit" form='myform2'>Reserve a Table</Button>
