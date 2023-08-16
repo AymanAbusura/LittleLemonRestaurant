@@ -8,9 +8,4 @@ const OrderOnline = () => {
     )
 }
 
-// Const function Login() {
-//     return (
-//         null
-//     );
-// }
 export default OrderOnline;

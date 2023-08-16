@@ -1,26 +1,10 @@
 import restaurant from './assets/restaurant.jpg';
 import chefB from './assets/restaurant chef B.jpg';
 import restaurantfood from './assets/restaurantfood.jpg';
-import './calender.css';
 import React from 'react';
 import { useState } from 'react';
 // import React, { useEffect } from 'react';
 import { useNavigate } from "react-router-dom";
-
-
-// let availableTimes = [
-//     {Time: 'Time'},
-//     {Time : '17:00 pm'},
-//     {Time : '18:00 pm'},
-//     {Time : '19:00 pm'},
-//     {Time : '20:00 pm'},
-//     {Time : '21:00 pm'},
-//     {Time : '22:00 pm'}
-// ]
-// var onOptionChangeAvailableTimes = e => {
-//     setavailableTimes(e.target.value);
-//     // changeColor2();
-// }
 
 // const [state, setState] = useState({
 //     Date: "",
@@ -29,26 +13,26 @@ import { useNavigate } from "react-router-dom";
 //     Occasion: ""
 //   });
 
+
+const BookingForm = () => {
+
 // constructor(props) {
 //     super(props);
 //     this.state = {
 //       isGoing: true,
 //       numberOfGuests: 2
-//     };
+//     }
 
 //     this.handleInputChange = this.handleInputChange.bind(this);
 //   }
-
-const BookingForm = () => {
-
         // Time : "",
         // NumberOfDiners : "",
         // Occasion : ""
     // const info1 = info.map((item) => <p>{item}</p>);
     const navigate = useNavigate();
     const navigateToBookingForm2 = () => {
-      navigate('/BookingForm2', {state :{ 
-        // navigate('/BookingSlot', {state :{
+    //   navigate('/BookingForm2', {state :{ 
+        navigate('/Reservation2', {state :{
         date : date, 
         seating : seating, 
         availableTimes : availableTimes,

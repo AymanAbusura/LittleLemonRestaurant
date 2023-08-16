@@ -366,7 +366,7 @@ input, select {
   background-color: #495E57;
   gap: 20px;
   justify-items: center;
-  height: 300px;
+  /* height: 300px; */
 }
 .formdiv{
   margin: auto;
@@ -377,7 +377,7 @@ input, select {
   height: 40px;
   border-radius: 10px;
 }
-.lastnamediv{
+/* .lastnamediv{
   margin-top: -66px;
   margin-left: 400px;
 }
@@ -391,7 +391,7 @@ input, select {
 }
 .detaildiv{
   margin-top: -60px;
-}
+} */
 .detail_span_p{
   font-size: 15px;
   /* background: none;
@@ -409,4 +409,32 @@ input, select {
 }
 .detail_span3{
   font-size: 13px;
+}
+
+
+/*  */
+.col1 {
+  display: block;
+  float: left;
+  line-height: 30px;
+  width: 301px;
+  height: 30px;
+  background-color: #f00;
+  border: 0;
+}
+
+.col2 {
+  position: relative;
+  top: -30px;
+  display: block;
+  float: right;
+  line-height: 30px;
+  width: 299px;
+  height: 30px;
+  background-color: #ff0;
+  border: 0;
+}
+.box99{
+  width: 50%;
+float: left;
 }

@@ -4,13 +4,8 @@ const About = () => {
     return (
         <div>
             About
-        </div>
+        </div>   
     )
 }
 
-// Const function Login() {
-//     return (
-//         null
-//     );
-// }
 export default About;

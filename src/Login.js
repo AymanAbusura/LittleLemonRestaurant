@@ -8,9 +8,4 @@ const Login = () => {
     )
 }
 
-// Const function Login() {
-//     return (
-//         null
-//     );
-// }
 export default Login;
