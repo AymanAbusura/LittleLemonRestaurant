@@ -335,6 +335,8 @@ label {
 input, select {
   color: #495E57;
   border-radius: 10px;
+  border-block-width: 1px;
+  border-style: outset;
 }
 .box {
   box-sizing:border-box;
@@ -366,10 +368,12 @@ input, select {
   background-color: #495E57;
   gap: 20px;
   justify-items: center;
-  /* height: 300px; */
+  min-height: 110px;
 }
 .formdiv{
   margin: auto;
+  display: flex;
+  flex-wrap: wrap;
 }
 .box1 {
   box-sizing:border-box;

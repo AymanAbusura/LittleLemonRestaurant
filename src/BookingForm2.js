@@ -2,131 +2,136 @@ import restaurant from './assets/restaurant.jpg';
 import chefB from './assets/restaurant chef B.jpg';
 import restaurantfood from './assets/restaurantfood.jpg';
 import React from 'react';
-import { useState } from 'react';
+import BookingSlot from './BookingSlot';
+// import { useState } from 'react';
 // import React, { useEffect } from 'react';
 // import { useNavigate } from "react-router-dom";
 
-const [state, setState] = useState({
-    Date: "",
-    Time: "",
-    NumberOfDiners: "",
-    Occasion: ""
-  });
+// const [state, setState] = useState({
+//     Date: "",
+//     Time: "",
+//     NumberOfDiners: "",
+//     Occasion: ""
+//   });
 
-const navigate = useNavigate();
-const navigateToBookingForm2 = () => {
-  navigate('/BookingSlot', {state :{ 
-    // navigate('/BookingSlot', {state :{
-    date : date, 
-    seating : seating, 
-    availableTimes : availableTimes,
-    guests : guests,
-    occasion : occasion
-}});
-};
+// const navigate = useNavigate();
+// const navigateToBookingForm2 = () => {
+//   navigate('/BookingSlot', {state :{ 
+//     // navigate('/BookingSlot', {state :{
+    
+//     date : date, 
+//     seating : seating, 
+//     availableTimes : availableTimes,
+//     guests : guests,
+//     occasion : occasion
+// }});
+// };
 
-function changeColor1(){
-    var color = '#495E57';
-    var fontcolor = 'white';
-    document.getElementsByTagName('Input')[2].style.background=color;
-    document.getElementsByTagName('Input')[2].style.color=fontcolor;
+// Change fields Color onChange //
+function ChangeInputDateColor(){
+        var color = '#495E57';
+        var fontcolor = 'white';
+        document.getElementsByTagName('Input')[2].style.background=color;
+        document.getElementsByTagName('Input')[2].style.color=fontcolor;
 }
-
-function changeColor2(){
+function ChangeSelectTimeColor(){
     var color = '#495E57';
     var fontcolor = 'white';
     document.querySelectorAll('Select')[0].style.background=color;
     document.querySelectorAll('Select')[0].style.color=fontcolor;
 }
-function changeColor3(){
+
+function ChangeSelectGuestColor(){
     var color = '#495E57';
     var fontcolor = 'white';
     document.querySelectorAll('Select')[1].style.background=color;
     document.querySelectorAll('Select')[1].style.color=fontcolor;
 }
-function changeColor4(){
+
+function ChangeSelectOccasionColor(){
     var color = '#495E57';
     var fontcolor = 'white';
     document.querySelectorAll('Select')[2].style.background=color;
     document.querySelectorAll('Select')[2].style.color=fontcolor;
 }
 
-const onOptionChangeSeating = e => {
-    setSeating(e.target.value);
-}
-const onOptionChangeDate = e => {
-    setDate(e.target.value);
-    changeColor1();
-}
-var onOptionChangeAvailableTimes = e => {
-    setavailableTimes(e.target.value);
-    changeColor2();
-}
-const onOptionChangeGuests = e => {
-    setGuests(e.target.value);
-    changeColor3();
-}
-const onOptionChangeOccasion = e => {
-    setOccasion(e.target.value);
-    changeColor4();
-}
-
-//   let yellow = '#ffc800';
-//   const [color, setColor] = useState(yellow);
-//    const changeColor = color => {
-//       setColor(color);
-//     }
-//     useEffect(() => {
-//         document.getElementsByClassName.backgroundColor = color;
-//     },[color])
-
-// const getIsFormValid = () => {
-//     if (Indoor === "" || Outdoor === "") {
-//       return false;
-//     }
-//     return true;
-//   };
-
-// const handleSubmit = (e) => {
-//     e.preventDeafult();
-//     console.log("Form Submitted!");
-// };
-
-        // Time : "",
-        // NumberOfDiners : "",
-        // Occasion : ""
-    // const info1 = info.map((item) => <p>{item}</p>);
-
-class Form extends React.Component{
+class BookingForm2 extends React.Component{
 
     constructor(props) {
-    super(props);
-    this.seating = {value: 'Seating'};
-    this.date = {value: 'Date'};
-    this.availableTimes = {value: 'Times'};
-    this.guests = {value: 'Guests'};
-    this.occasion = {value: 'Occasion'};
+        super(props);
+        this.state = {
+            selectedOption: true,
+            resDate:'',
+            resTime: 'Time',
+            guest: 'No. of Guests',
+            occasion:'Occasion',
+        };
+    
+        this.handleInputSeatingChange = this.handleInputSeatingChange.bind(this);
+        this.handleInputDateChange = this.handleInputDateChange.bind(this);
+        this.handleSelectTimeChange = this.handleSelectTimeChange.bind(this);
+        this.handleSelectGuestChange = this.handleSelectGuestChange.bind(this);
+        this.handleSelectOccasionChange = this.handleSelectOccasionChange.bind(this);
+      }
+      handleInputSeatingChange(e) {
+        // console.log(e.target.value);
+        this.setState({
+            selectedOption: e.target.value
+          });
+      }
+      handleInputDateChange(e) {
+        // console.log(e.target.value);
+        ChangeInputDateColor();
+        this.setState({
+            resDate: e.target.value
+          });
+      }
+      handleSelectTimeChange(e) {
+        // console.log(e.target.value);
+        ChangeSelectTimeColor();
+        this.setState({
+            resTime: e.target.value
+          });
+      }
+      handleSelectGuestChange(e) {
+        // console.log(e.target.value);
+        ChangeSelectGuestColor();
+        this.setState({
+            guest: e.target.value
+          });
+      }
+      handleSelectOccasionChange(e) {
+        // console.log(e.target.value);
+        ChangeSelectOccasionColor();
+        this.setState({
+            occasion: e.target.value
+          });
+      }
+    //   handleSelectChange(e) {
 
-
-    this.handleChange = this.handleChange.bind(this);
-    this.handleSubmit = this.handleSubmit.bind(this);
-  }
+        // this.setState({
+        //     resDate: e.target.value,
+        //   });
+        // const target = e.target;
+        // const value = target.type === 'radio' ? target.checked : target.value;
+        // const name = target.name;
+    
+        // this.setState({
+        //   [name]: value
+        // });
+    //   }
 
   handleChange(event) {
     this.setState({value: event.target.value});
   }
 
   handleSubmit(event) {
-    alert('Your favorite flavor is: ' + this.state.value);
+    console.log(this.state);
+    alert('Success: ' + this.state);
     event.preventDefault();
   }
 
     render() {
-        const [seating, setSeating] = useState("");
-        const [date, setDate] = useState("Date");
-        const [availableTimes, setavailableTimes] = useState("Time");
-        const [guests, setGuests] = useState("No. of Guests");
-        const [occasion, setOccasion] = useState("Occasion");
     return (
         <section>
             <div className='Maindiv'>
@@ -141,8 +146,8 @@ class Form extends React.Component{
                             name='indoor'
                             id='indoor'
                             value="Indoor"
-                            checked={seating === "Indoor"}
-                            onChange={onOptionChangeSeating}
+                            checked={this.state.selectedOption === 'Indoor'}
+                            onChange={this.handleInputSeatingChange}
                         />
                         </label>
                         <label className='label2' htmlFor="outdoor">Outdoor seating 
@@ -151,37 +156,37 @@ class Form extends React.Component{
                                 name='outdoor'
                                 id='outdoor'
                                 value="Outdoor"
-                                checked={seating === "Outdoor"}
-                                onChange={onOptionChangeSeating}
+                                checked={this.state.selectedOption === 'Outdoor'}
+                                onChange={this.handleInputSeatingChange}
                             />
                         </label>
                         <div>
                             <div>
                                 <div>
-                                    <label htmlFor="res-date">Date</label>
+                                    <label htmlFor="resDate">Date</label>
                                 </div>
                                 <div>
                                     <input 
                                         type="date"
-                                        name='res-date'
-                                        id="res-date" 
+                                        name='resDate'
+                                        id="resDate" 
                                         className='box'
-                                        value={date} 
-                                        onChange={onOptionChangeDate}
+                                        value={this.state.resDate} 
+                                        onChange={this.handleInputDateChange}
                                 />
                                 </div>
                             </div>
                             <div className='labelsdiv1'>
                                 <div>
-                                    <label htmlFor="res-time">Time</label>
+                                    <label htmlFor="resTime">Time</label>
                                 </div>
                                 <div>
                                     <select 
-                                        name='res-time' 
-                                        id="res-time" 
-                                        value={availableTimes} 
+                                        name='resTime' 
+                                        id="resTime" 
+                                        value={this.state.resTime} 
                                         className='box'
-                                        onChange={onOptionChangeAvailableTimes}
+                                        onChange={this.handleSelectTimeChange}
                                     >
                                         <option defaultValue disabled hidden>Time</option>
                                         <option value="17:00">17:00</option>
@@ -201,9 +206,9 @@ class Form extends React.Component{
                                     <select 
                                         name='guest' 
                                         id="guest" 
-                                        value={guests} 
+                                        value={this.state.guest} 
                                         className='box'
-                                        onChange={onOptionChangeGuests}
+                                        onChange={this.handleSelectGuestChange}
                                     >
                                         <option defaultValue disabled hidden>No. of Guests</option>
                                         <option value="1 Diner">1 Diner</option>
@@ -221,15 +226,15 @@ class Form extends React.Component{
                             </div>
                             <div className='labelsdiv3'>
                                 <div>
-                                    <label htmlFor="Occasion">Occasion</label>
+                                    <label htmlFor="occasion">Occasion</label>
                                 </div>
                                 <div>
                                     <select 
-                                        name='Occasion' 
-                                        id="Occasion" 
-                                        value={occasion} 
+                                        name='occasion' 
+                                        id="occasion" 
+                                        value={this.state.occasion} 
                                         className='box'
-                                        onChange={onOptionChangeOccasion}
+                                        onChange={this.handleSelectOccasionChange}
                                     >
                                         <option defaultValue disabled hidden>Occasion</option>
                                         <option value="Birthday">Birthday</option>
@@ -258,7 +263,9 @@ class Form extends React.Component{
                     </div> */}
                 </div>
                 <div className='buttondiv'>
-                    <button type="submit" className='button3' form='myform' onClick={navigateToBookingForm2}>Reserve a Table</button>
+                    <button type="submit" className='button3' form='myform' onSubmit={this.handleSubmit}>Reserve a Table</button>
+                    {/* <button type="submit" className='button3' form='myform' onClick={parentToChild}>Reserve a Table</button> */}
+                    {/* <button type="submit" className='button3' form='myform' onClick={navigateToBookingForm2}>Reserve a Table</button> */}
                     {/* <button className='button3' form='myform' onClick={navigateToBookForm2}>Reserve a Table</button> */}
                 </div>
             </div>
@@ -267,4 +274,4 @@ class Form extends React.Component{
                 }
 }
 
-export default BookingForm;
+export default BookingForm2;

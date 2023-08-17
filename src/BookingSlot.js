@@ -45,7 +45,7 @@ function BookingSlot () {
                 <Box>
                     <form className='form1' id="myform2" onSubmit={formik.handleSubmit}>
                         <div className='formdiv'>
-                            <FormControl isInvalid={!!formik.errors.firstName && formik.touched.firstName} style={{padding:"10px"}}>
+                            <FormControl isInvalid={!!formik.errors.firstName && formik.touched.firstName} style={{padding:"10px",width:"45%"}}>
                                 <FormLabel htmlFor="firstName">* First Name</FormLabel>
                                 <Input 
                                     id="firstName" 
@@ -56,7 +56,7 @@ function BookingSlot () {
                                 /> 
                                 <FormErrorMessage>{formik.errors.firstName}</FormErrorMessage> 
                             </FormControl> 
-                            <FormControl isInvalid={!!formik.errors.lastName && formik.touched.lastName} style={{padding:"10px"}}>
+                            <FormControl isInvalid={!!formik.errors.lastName && formik.touched.lastName} style={{padding:"10px",width:"45%"}}>
                                 <FormLabel htmlFor="lastName">* Last Name</FormLabel>
                                 <Input 
                                     id="lastName" 
@@ -67,7 +67,7 @@ function BookingSlot () {
                                 /> 
                                 <FormErrorMessage>{formik.errors.lastName}</FormErrorMessage> 
                             </FormControl>
-                            <FormControl isInvalid={!!formik.errors.email && formik.touched.email} style={{padding:"10px"}}>
+                            <FormControl isInvalid={!!formik.errors.email && formik.touched.email} style={{padding:"10px",width:"45%"}}>
                                 <FormLabel htmlFor="email">* Email Address</FormLabel> 
                                 <Input 
                                     id="email" 
@@ -78,7 +78,7 @@ function BookingSlot () {
                                 /> 
                                 <FormErrorMessage>{formik.errors.email}</FormErrorMessage> 
                             </FormControl>
-                            <FormControl isInvalid={!!formik.errors.phone && formik.touched.phone} style={{padding:"10px"}}>
+                            <FormControl isInvalid={!!formik.errors.phone && formik.touched.phone} style={{padding:"10px",width:"45%"}}>
                                 <FormLabel htmlFor="phone">* Phone Number</FormLabel> 
                                 <Input 
                                     id="phone" 
@@ -89,12 +89,12 @@ function BookingSlot () {
                                 /> 
                                 <FormErrorMessage>{formik.errors.phone}</FormErrorMessage> 
                             </FormControl>
-                            <FormControl style={{padding:"10px"}}>
+                            <FormControl style={{padding:"10px",width: "45%"}}>
                                 <FormLabel htmlFor="email">Special Request</FormLabel> 
                                 <Textarea 
                                     id="specialRequest" 
                                     name="specialRequest"
-                                    style={{height:"30px",width:"100%"}}
+                                    style={{height:"50px",width:"100%"}}
                                     {...formik.getFieldProps("specialRequest")} 
                                 />
                             </FormControl>
