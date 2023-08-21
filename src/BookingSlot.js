@@ -2,8 +2,9 @@ import restaurant from './assets/restaurant.jpg';
 import chefB from './assets/restaurant chef B.jpg';
 import restaurantfood from './assets/restaurantfood.jpg';
 import React from 'react';
-import Nav from './Nav.js';
-import Footer from './Footer.js';
+import Nav from './Nav';
+import Footer from './Footer';
+import { useLocation } from 'react-router-dom';
 import { 
     Box, 
     Button, 
@@ -16,14 +17,15 @@ import {
 import { useFormik } from "formik";
 import * as Yup from 'yup';
 
-function BookingSlot () {
-    const formik = useFormik({ 
+
+function BookingSlot (props) {
+     const formik = useFormik({ 
         initialValues: { 
           firstName: "", 
           lastName:"",
           phone: "",
           email: "", 
-          specialRequest: "", 
+          specialRequest: "",
         }, 
         onSubmit: (values) => { 
             console.log(values);
@@ -37,6 +39,9 @@ function BookingSlot () {
           specialRequest: Yup.string().min(25, "Must be at least 25 characters"), 
         }), 
       });
+
+      const location = useLocation();
+      const info = location.state;
 
     return (
         <section>
@@ -99,15 +104,11 @@ function BookingSlot () {
                                 />
                             </FormControl>
                             <FormControl style={{padding:"10px"}}>
-                                {/* <FormLabel htmlFor="phone">Date</FormLabel>
-                                <FormLabel htmlFor="email">Special Request</FormLabel> 
-                                <span className='detail_span_p' required>{location.state.date}</span>
-                                <span className='detail_span_p detail_span'>{location.state.guests}</span>
-                                <br></br>
-                                <span className='detail_span_p'>{location.state.availableTimes}</span>
-                                <span className='detail_span_p detail_span1'>{location.state.occasion}</span>
-                                <p className='detail_span_p detail_span2'>{location.state.seating}</p>
-                                <div className='detail_span3'><input type='radio' required/>You agree to our friendly <u>privacy policy</u></div> */}
+                                <p>Seating: {info.selectedOption}</p>
+                                <p>Date: {info.resDate}</p>
+                                <p>Time: {info.resTime}</p>
+                                <p>Guest: {info.guest}</p>
+                                <p>Occasion: {info.occasion}</p>
                             </FormControl>
                         </div>
                     </form>
@@ -124,16 +125,9 @@ function BookingSlot () {
                     <div>
                         <img src={restaurantfood} alt="restaurantfood" className='cardimages2'/>
                     </div>
-                    {/* <div>
-                        <button className='button3' onClick={navigateToBookFrom2}>Reserve a Table</button>
-                    </div> */}
                 </div>
                 <div className='buttondiv'>
                     <Button className='button3' type="submit" form='myform2'>Confirm Reservation</Button>
-                    {/* <button type="submit" className='button3' form='myform1'>Confirm Reservation</button>
-                    <button className='button3' form='myform2' onClick={handleSubmit}>Reserve a Table</button>
-                    <Button className='button3' type="submit" form='myform2'>Reserve a Table</Button>
-                    <Button type="submit" className='button3' form='myform2' isLoading={isLoading}>Submit</Button> */}
                 </div>
             </div>
             <Footer />

@@ -2,121 +2,95 @@ import restaurant from './assets/restaurant.jpg';
 import chefB from './assets/restaurant chef B.jpg';
 import restaurantfood from './assets/restaurantfood.jpg';
 import React from 'react';
+import { useNavigate } from 'react-router-dom';
 import { useState } from 'react';
-// import React, { useEffect } from 'react';
-import { useNavigate } from "react-router-dom";
 
-// const [state, setState] = useState({
-//     Date: "",
-//     Time: "",
-//     NumberOfDiners: "",
-//     Occasion: ""
-//   });
+// Change fields Color onChange //
+function ChangeinputDateColor(){
+        var color = '#495E57';
+        var fontcolor = 'white';
+        document.getElementsByTagName('input')[2].style.background=color;
+        document.getElementsByTagName('input')[2].style.color=fontcolor;
+}
+function ChangeSelectTimeColor(){
+    var color = '#495E57';
+    var fontcolor = 'white';
+    document.querySelectorAll('Select')[0].style.background=color;
+    document.querySelectorAll('Select')[0].style.color=fontcolor;
+}
 
+function ChangeSelectGuestColor(){
+    var color = '#495E57';
+    var fontcolor = 'white';
+    document.querySelectorAll('Select')[1].style.background=color;
+    document.querySelectorAll('Select')[1].style.color=fontcolor;
+}
 
-const BookingForm = () => {
+function ChangeSelectOccasionColor(){
+    var color = '#495E57';
+    var fontcolor = 'white';
+    document.querySelectorAll('Select')[2].style.background=color;
+    document.querySelectorAll('Select')[2].style.color=fontcolor;
+}
 
-// constructor(props) {
-//     super(props);
-//     this.state = {
-//       isGoing: true,
-//       numberOfGuests: 2
-//     }
+function BookingForm2 () {
+    const [state, setState] = useState({
+        selectedOption: true,
+        resDate: "",
+        resTime: "Time",
+        guest: "No. of Guests",
+        occasion: "Occasion"
+    });
+    
+    // functions to handle form changes //
+    function handleinputSeatingChange(e) {
+        setState({
+            ...state,
+            selectedOption: e.target.value,
+        });
+    }
+    
+    function handleInputDateChange(e) {
+        setState({
+            ...state,
+            resDate: e.target.value,
+        });
+        ChangeinputDateColor();
+    }
 
-//     this.handleInputChange = this.handleInputChange.bind(this);
-//   }
-        // Time : "",
-        // NumberOfDiners : "",
-        // Occasion : ""
-    // const info1 = info.map((item) => <p>{item}</p>);
+    function handleSelectTimeChange(e) {
+        setState({
+            ...state,
+            resTime: e.target.value,
+        });
+        ChangeSelectTimeColor();
+    }
+
+    function handleSelectGuestChange(e) {
+        setState({
+            ...state,
+            guest: e.target.value,
+        });
+        ChangeSelectGuestColor();
+    }
+
+    function handleSelectOccasionChange(e) {
+        ChangeSelectOccasionColor();
+        setState({
+            ...state,
+            occasion: e.target.value,
+        });
+    }
+    
     const navigate = useNavigate();
-    const navigateToBookingForm2 = () => {
-    //   navigate('/BookingForm2', {state :{ 
-        navigate('/Reservation2', {state :{
-        date : date, 
-        seating : seating, 
-        availableTimes : availableTimes,
-        guests : guests,
-        occasion : occasion
-    }});
-    };
-
-    function changeColor1(){
-        var color = '#495E57';
-        var fontcolor = 'white';
-        document.getElementsByTagName('Input')[2].style.background=color;
-        document.getElementsByTagName('Input')[2].style.color=fontcolor;
+    
+    function handleSubmit(event) {
+        event.preventDefault();
+        console.log(state);
+        navigate('/BookingSlot', {state});
     }
-
-    function changeColor2(){
-        var color = '#495E57';
-        var fontcolor = 'white';
-        document.querySelectorAll('Select')[0].style.background=color;
-        document.querySelectorAll('Select')[0].style.color=fontcolor;
-    }
-    function changeColor3(){
-        var color = '#495E57';
-        var fontcolor = 'white';
-        document.querySelectorAll('Select')[1].style.background=color;
-        document.querySelectorAll('Select')[1].style.color=fontcolor;
-    }
-    function changeColor4(){
-        var color = '#495E57';
-        var fontcolor = 'white';
-        document.querySelectorAll('Select')[2].style.background=color;
-        document.querySelectorAll('Select')[2].style.color=fontcolor;
-    }
-
-    const [seating, setSeating] = useState("");
-    const [date, setDate] = useState("Date");
-    const [availableTimes, setavailableTimes] = useState("Time");
-    const [guests, setGuests] = useState("No. of Guests");
-    const [occasion, setOccasion] = useState("Occasion");
-
-    // var availableTimes = [...availableTimes];
-    // [availableTimes, setavailableTimes] = useState(["Time"]);
-
-    const onOptionChangeSeating = e => {
-        setSeating(e.target.value);
-    }
-    const onOptionChangeDate = e => {
-        setDate(e.target.value);
-        changeColor1();
-    }
-    var onOptionChangeAvailableTimes = e => {
-        setavailableTimes(e.target.value);
-        changeColor2();
-    }
-    const onOptionChangeGuests = e => {
-        setGuests(e.target.value);
-        changeColor3();
-    }
-    const onOptionChangeOccasion = e => {
-        setOccasion(e.target.value);
-        changeColor4();
-    }
-
-//   let yellow = '#ffc800';
-//   const [color, setColor] = useState(yellow);
-//    const changeColor = color => {
-//       setColor(color);
-//     }
-//     useEffect(() => {
-//         document.getElementsByClassName.backgroundColor = color;
-//     },[color])
-
-// const getIsFormValid = () => {
-//     if (Indoor === "" || Outdoor === "") {
-//       return false;
-//     }
-//     return true;
-//   };
-
-// const handleSubmit = (e) => {
-//     e.preventDeafult();
-//     console.log("Form Submitted!");
-// };
     return (
+        <>
         <section>
             <div className='Maindiv'>
                 <div className='div1Main2'>
@@ -130,8 +104,8 @@ const BookingForm = () => {
                             name='indoor'
                             id='indoor'
                             value="Indoor"
-                            checked={seating === "Indoor"}
-                            onChange={onOptionChangeSeating}
+                            checked={state.selectedOption === 'Indoor'}
+                            onChange={handleinputSeatingChange}
                         />
                         </label>
                         <label className='label2' htmlFor="outdoor">Outdoor seating 
@@ -140,37 +114,37 @@ const BookingForm = () => {
                                 name='outdoor'
                                 id='outdoor'
                                 value="Outdoor"
-                                checked={seating === "Outdoor"}
-                                onChange={onOptionChangeSeating}
+                                checked={state.selectedOption === 'Outdoor'}
+                                onChange={handleinputSeatingChange}
                             />
                         </label>
                         <div>
                             <div>
                                 <div>
-                                    <label htmlFor="res-date">Date</label>
+                                    <label htmlFor="resDate">Date</label>
                                 </div>
                                 <div>
                                     <input 
                                         type="date"
-                                        name='res-date'
-                                        id="res-date" 
+                                        name='resDate'
+                                        id="resDate" 
                                         className='box'
-                                        value={date} 
-                                        onChange={onOptionChangeDate}
+                                        value={state.resDate}
+                                        onChange={handleInputDateChange}
                                 />
                                 </div>
                             </div>
                             <div className='labelsdiv1'>
                                 <div>
-                                    <label htmlFor="res-time">Time</label>
+                                    <label htmlFor="resTime">Time</label>
                                 </div>
                                 <div>
                                     <select 
-                                        name='res-time' 
-                                        id="res-time" 
-                                        value={availableTimes} 
+                                        name='resTime' 
+                                        id="resTime" 
                                         className='box'
-                                        onChange={onOptionChangeAvailableTimes}
+                                        value={state.resTime}
+                                        onChange={handleSelectTimeChange}
                                     >
                                         <option defaultValue disabled hidden>Time</option>
                                         <option value="17:00">17:00</option>
@@ -190,9 +164,9 @@ const BookingForm = () => {
                                     <select 
                                         name='guest' 
                                         id="guest" 
-                                        value={guests} 
                                         className='box'
-                                        onChange={onOptionChangeGuests}
+                                        value={state.guest}
+                                        onChange={handleSelectGuestChange}
                                     >
                                         <option defaultValue disabled hidden>No. of Guests</option>
                                         <option value="1 Diner">1 Diner</option>
@@ -210,15 +184,15 @@ const BookingForm = () => {
                             </div>
                             <div className='labelsdiv3'>
                                 <div>
-                                    <label htmlFor="Occasion">Occasion</label>
+                                    <label htmlFor="occasion">Occasion</label>
                                 </div>
                                 <div>
                                     <select 
-                                        name='Occasion' 
-                                        id="Occasion" 
-                                        value={occasion} 
+                                        name='occasion' 
+                                        id="occasion" 
                                         className='box'
-                                        onChange={onOptionChangeOccasion}
+                                        value={state.occasion}
+                                        onChange={handleSelectOccasionChange}
                                     >
                                         <option defaultValue disabled hidden>Occasion</option>
                                         <option value="Birthday">Birthday</option>
@@ -242,17 +216,14 @@ const BookingForm = () => {
                     <div>
                         <img src={restaurantfood} alt="restaurantfood" className='cardimages2'/>
                     </div>
-                    {/* <div>
-                        <button className='button3' onClick={navigateToBookFrom2}>Reserve a Table</button>
-                    </div> */}
                 </div>
                 <div className='buttondiv'>
-                    <button type="submit" className='button3' form='myform' onClick={navigateToBookingForm2}>Reserve a Table</button>
-                    {/* <button className='button3' form='myform' onClick={navigateToBookForm2}>Reserve a Table</button> */}
+                    <button type="submit" className='button3' form='myform' onClick={handleSubmit}>Reserve a Table</button>
                 </div>
             </div>
         </section>
+        </>
     );
-}
+};
 
-export default BookingForm;
+export default BookingForm2;
