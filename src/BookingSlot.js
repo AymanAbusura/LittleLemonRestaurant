@@ -5,6 +5,7 @@ import React from 'react';
 import Nav from './Nav';
 import Footer from './Footer';
 import { useLocation } from 'react-router-dom';
+import { useState } from 'react';
 import { 
     Box, 
     Button, 
@@ -95,6 +96,21 @@ function BookingSlot (props) {
                                 <FormErrorMessage>{formik.errors.phone}</FormErrorMessage> 
                             </FormControl>
                             <FormControl style={{padding:"10px",width: "45%"}}>
+                                <p>{info.selectedOption}</p>
+                                <p>{info.resDate}</p>
+                                <p>{info.resTime}</p>
+                                <p>{info.guest}</p>
+                                <p>{info.occasion}</p>
+                                <Input 
+                                    type='radio' 
+                                    name='agreed' 
+                                    id='agreed' 
+                                    value='agreed'
+                                    required
+                                /> 
+                                You agree to our friendly <u>privacy policy</u>
+                            </FormControl>
+                            <FormControl style={{padding:"10px",width: "45%"}}>
                                 <FormLabel htmlFor="email">Special Request</FormLabel> 
                                 <Textarea 
                                     id="specialRequest" 
@@ -102,13 +118,6 @@ function BookingSlot (props) {
                                     style={{height:"50px",width:"100%"}}
                                     {...formik.getFieldProps("specialRequest")} 
                                 />
-                            </FormControl>
-                            <FormControl style={{padding:"10px"}}>
-                                <p>Seating: {info.selectedOption}</p>
-                                <p>Date: {info.resDate}</p>
-                                <p>Time: {info.resTime}</p>
-                                <p>Guest: {info.guest}</p>
-                                <p>Occasion: {info.occasion}</p>
                             </FormControl>
                         </div>
                     </form>
