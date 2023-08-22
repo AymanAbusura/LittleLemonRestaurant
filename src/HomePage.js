@@ -19,7 +19,6 @@ function HomePage() {
     navigate('/');
     navigate('/Reservation');
   };
-
     return (
       <section>
         <div className='Main'>
