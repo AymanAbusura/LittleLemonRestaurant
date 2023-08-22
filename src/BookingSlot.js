@@ -5,7 +5,7 @@ import React from 'react';
 import Nav from './Nav';
 import Footer from './Footer';
 import { useLocation } from 'react-router-dom';
-import { useState } from 'react';
+import { useNavigate } from 'react-router-dom';
 import { 
     Box, 
     Button, 
@@ -14,6 +14,7 @@ import {
     FormLabel, 
     Input,  
     Textarea,
+    position,
    } from "@chakra-ui/react"; 
 import { useFormik } from "formik";
 import * as Yup from 'yup';
@@ -30,6 +31,7 @@ function BookingSlot (props) {
         }, 
         onSubmit: (values) => { 
             console.log(values);
+            console.log();
             alert(`Your Reservation has been confirmed check your email`)
         }, 
         validationSchema: Yup.object({ 
@@ -41,8 +43,29 @@ function BookingSlot (props) {
         }), 
       });
 
+      //to locate data from component BookingForm in BookingSlot
       const location = useLocation();
       const info = location.state;
+
+      //To check date if empty and change Date format to "dd/mm/YYYY"
+      const checkDate = info.resDate;
+      const Empty = "Select Date";
+      function isEmpty(value) {
+        if (value === "") {
+            return Empty;
+        } 
+        else {
+            let date = new Date(value);
+            date = (date.getDate() < 10 ? '0' + date.getDate() : date.getDate()) + '.' + (date.getMonth() + 1)+ '.' + date.getFullYear();
+            return date;
+        }
+        }
+
+        //To Navigate back to BookingForm to add date and changes data included in BookingSlot's form
+        const navigate = useNavigate();
+        function onClickBackToChoose() {
+            navigate('/Reservation');
+        }
 
     return (
         <section>
@@ -96,19 +119,20 @@ function BookingSlot (props) {
                                 <FormErrorMessage>{formik.errors.phone}</FormErrorMessage> 
                             </FormControl>
                             <FormControl style={{padding:"10px",width: "45%"}}>
-                                <p>{info.selectedOption}</p>
-                                <p>{info.resDate}</p>
-                                <p>{info.resTime}</p>
-                                <p>{info.guest}</p>
-                                <p>{info.occasion}</p>
-                                <Input 
-                                    type='radio' 
-                                    name='agreed' 
-                                    id='agreed' 
-                                    value='agreed'
-                                    required
-                                /> 
-                                You agree to our friendly <u>privacy policy</u>
+                                <button className='details' onClick={onClickBackToChoose}>{isEmpty(checkDate)}</button>
+                                <button className='details detailsGuest'>{info.guest}</button>
+                                <button className='details detailsResTime'>{info.resTime}</button>
+                                <button className='details detailsOccasion'>{info.occasion}</button>
+                                <div className='detailsAgreed'>
+                                    <Input 
+                                        type='radio' 
+                                        name='agreed' 
+                                        id='agreed' 
+                                        value='agreed'
+                                        required
+                                    /> 
+                                    You agree to our friendly <u>privacy policy</u>
+                                </div>
                             </FormControl>
                             <FormControl style={{padding:"10px",width: "45%"}}>
                                 <FormLabel htmlFor="email">Special Request</FormLabel> 

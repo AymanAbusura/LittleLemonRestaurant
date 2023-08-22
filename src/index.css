@@ -362,7 +362,7 @@ input, select {
   margin: 0;
   padding: 0;
 }
-/*BookingForm2*/
+/*BookingSlot*/
 .form1{
   display: grid;
   background-color: #495E57;
@@ -380,6 +380,36 @@ input, select {
   width: 250px;
   height: 40px;
   border-radius: 10px;
+}
+.details{
+  position: relative;
+  background: none;
+  border:none;
+  width: 30%;
+  font-size: 20px;
+}
+.detailsGuest{
+  left: 10%;
+  bottom: 2%;
+}
+.detailsResTime{
+  bottom: -40%;
+  right: 60%;
+}
+.detailsOccasion{
+  left: 40%;
+  bottom: -7%;
+}
+.detailsSelectedOption{
+  left: 25%; 
+  bottom: 35%;
+}
+.detailsAgreed{
+  position: relative; 
+  bottom: -15%;
+}
+.detailsimg{
+  width: 10%;
 }
 /* .lastnamediv{
   margin-top: -66px;
@@ -413,32 +443,4 @@ input, select {
 }
 .detail_span3{
   font-size: 13px;
-}
-
-
-/*  */
-.col1 {
-  display: block;
-  float: left;
-  line-height: 30px;
-  width: 301px;
-  height: 30px;
-  background-color: #f00;
-  border: 0;
-}
-
-.col2 {
-  position: relative;
-  top: -30px;
-  display: block;
-  float: right;
-  line-height: 30px;
-  width: 299px;
-  height: 30px;
-  background-color: #ff0;
-  border: 0;
-}
-.box99{
-  width: 50%;
-float: left;
 }

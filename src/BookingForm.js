@@ -146,7 +146,7 @@ function BookingForm2 () {
                                         value={state.resTime}
                                         onChange={handleSelectTimeChange}
                                     >
-                                        <option defaultValue disabled hidden>Time</option>
+                                        <option value="Time" disabled hidden>Time</option>
                                         <option value="17:00">17:00</option>
                                         <option value="18:00">18:00</option>
                                         <option value="19:00">19:00</option>
@@ -168,7 +168,7 @@ function BookingForm2 () {
                                         value={state.guest}
                                         onChange={handleSelectGuestChange}
                                     >
-                                        <option defaultValue disabled hidden>No. of Guests</option>
+                                        <option value="No. of Guests" disabled hidden>No. of Guests</option>
                                         <option value="1 Diner">1 Diner</option>
                                         <option value="2 Diner">2 Diner</option>
                                         <option value="3 Diner">3 Diner</option>
@@ -194,7 +194,7 @@ function BookingForm2 () {
                                         value={state.occasion}
                                         onChange={handleSelectOccasionChange}
                                     >
-                                        <option defaultValue disabled hidden>Occasion</option>
+                                        <option value="Occasion" disabled hidden>Occasion</option>
                                         <option value="Birthday">Birthday</option>
                                         <option value="Engagement">Engagement</option>
                                         <option value="Anniversary">Anniversary</option>
